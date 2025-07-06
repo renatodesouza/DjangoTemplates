@@ -8,4 +8,4 @@ def index(request):
 
 def imagem(request, pk):
     imagem = Fotografia.objects.get(id=pk)
-    return render(request, 'galeria/imagem.html')
+    return render(request, 'galeria/imagem.html', {'imagem':imagem})
