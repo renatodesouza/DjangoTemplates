@@ -27,14 +27,14 @@
                         <ul class="cards__lista">
                             {% for imagem in imagens %}
                             <li class="card">
-                                <a href="{% url 'imagem' 1 %}">
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/carina-nebula.png' %}" alt="foto">
+                                <a href="{% url 'imagem' imagem.id %}">
+                                    <img class="card__imagem" src="{{ imagem.foto.url }}" alt="{{ imagem.nome }}">
                                 </a>
-                                <span class="card__tag">Estrelas</span>
+                                <span class="card__tag">Nebulosas</span>
                                 <div class="card__info">
-                                    <p class="card__titulo">Nome da foto</p>
+                                    <p class="card__titulo">{{ imagem.nome }}</p>
                                     <div class="card__texto">
-                                        <p class="card__descricao">Fonte/fotógrafo/satélite</p>
+                                        <p class="card__descricao">{{ imagem.descricao }}</p>
                                         <span>
                                             <img src="{% static '/assets/ícones/1x/favorite_outline.png' %}" alt="ícone de coração">
                                         </span>
